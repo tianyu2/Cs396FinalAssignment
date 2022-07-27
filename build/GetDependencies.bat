@@ -17,6 +17,16 @@ powershell write-host -fore White ----------------------------------------------
 powershell write-host -fore White GAME - DOWNLOADING DEPENDENCIES
 powershell write-host -fore White ------------------------------------------------------------------------------------------------------
 
+rmdir "../dependencies/freeglut" /S /Q
+git clone https://github.com/FreeGLUTProject/freeglut.git "../dependencies/freeglut"
+if %ERRORLEVEL% GEQ 1 goto :PAUSE
+
+echo.
+rmdir "../dependencies/freeglut_lib_bin" /S /Q
+git clone https://github.com/hotaru08/freeglut_lib_bin.git "../dependencies/freeglut_lib_bin"
+if %ERRORLEVEL% GEQ 1 goto :PAUSE
+
+
 echo.
 rmdir "../dependencies/xecs" /S /Q
 git clone https://github.com/LIONant-depot/xECS.git "../dependencies/xecs"

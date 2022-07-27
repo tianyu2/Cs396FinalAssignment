@@ -28,6 +28,15 @@
     <Filter Include="Dependencies\xECS">
       <UniqueIdentifier>{5b9f5501-14f2-48b0-acf5-82b9d6081db1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Components">
+      <UniqueIdentifier>{6e44f0c1-5943-4d25-ab26-557c400ab135}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Inputs">
+      <UniqueIdentifier>{e8ad9e17-53b5-4583-bba7-5694150f7e8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems">
+      <UniqueIdentifier>{a517d991-395f-4a6b-870d-3c53a4d606b5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\Settings\PropertyConfig.h">
@@ -257,6 +266,41 @@
     </ClInclude>
     <ClInclude Include="..\..\dependencies\xecs\dependencies\xcore\src\xcore_vector.h">
       <Filter>Dependencies\xCore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Components.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Position.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Velocity.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Scale.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\KeyInputs.h">
+      <Filter>Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GridCells.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Grid.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\RenderingSystem.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Systems.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Game.h" />
+    <ClInclude Include="..\..\src\RenderingInfo.h" />
+    <ClInclude Include="..\..\src\RenderingShipSystem.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Timer.h">
+      <Filter>Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -31,8 +31,9 @@
 *.out
 *.app
 
-build/.vs
-build/Debug
-build/x64
+build/Cs396FinalAssignment/.vs
+build/Cs396FinalAssignment/Debug
+build/Cs396FinalAssignment/Release
+build/Cs396FinalAssignment/x64
 
 dependencies
