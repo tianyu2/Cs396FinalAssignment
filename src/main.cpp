@@ -2,13 +2,16 @@
 #include <xecs.h>
 #define GLUT_STATIC_LIB
 #include <GL/glut.h>
+#include <GlutPrint.h>
+
 #include <KeyInputs.h>
 #include <RenderingInfo.h>
 #include <Components.h>
-#include <Systems.h>
 #include <Grid.h>
+#include <Systems.h>
 #include <random>
 #include <Game.h>
+#include <Helper.h>
 //---------------------------------------------------------------------------------------
 // GAME
 //---------------------------------------------------------------------------------------
@@ -30,7 +33,7 @@ int main(int argc, char** argv)
     s_Game.m_GameMgr = std::make_unique<xecs::game_mgr::instance>();
     s_Game.Initialize();
     s_Game.InitializeGame();
-    glutInitWindowSize(s_Game.m_renderingInfo.m_W, s_Game.m_renderingInfo.m_H);
+    glutInitWindowSize(s_Game.m_renderingInfo.m_width, s_Game.m_renderingInfo.m_height);
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
     glutCreateWindow(xcore::get().m_pAppName);
@@ -49,8 +52,8 @@ int main(int argc, char** argv)
     glutReshapeFunc(
         [](int w, int h) noexcept
         {
-            s_Game.m_renderingInfo.m_W = w;
-            s_Game.m_renderingInfo.m_H = h;
+            s_Game.m_renderingInfo.m_width = w;
+            s_Game.m_renderingInfo.m_height = h;
         }
     );
 

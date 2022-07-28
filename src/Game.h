@@ -18,19 +18,20 @@ static struct Game
     void Initialize() noexcept
     {
         RenderingSystem::renderingInfo = &m_renderingInfo;
-        m_GameMgr->RegisterComponents<Position, Scale, Velocity,Timer>();
-        m_GameMgr->RegisterSystems<RenderingSystem,RenderingShipSystem>();
+        m_GameMgr->RegisterComponents<Position, Scale, Velocity,Timer, GridCells>();
+        m_GameMgr->RegisterSystems<RenderingSystem,RenderingGridSystem, RenderingShipSystem>();
+       
     }
     void InitializeGame() noexcept
     {
-        s_Game.m_GameMgr->getOrCreateArchetype< Position, Velocity, Timer>()
-            .CreateEntities(1, [&](Position& position, Velocity& velocity, Timer& timer) noexcept
+        m_GameMgr->getOrCreateArchetype< Position, Velocity, Timer,GridCells>()
+            .CreateEntities(1000, [&](Position& position, Velocity& velocity, Timer& timer, GridCells& cells) noexcept
                 {
-                    position.m_value = xcore::vector2{ static_cast<float>(std::rand() % s_Game.m_renderingInfo.m_W)
-                                                         , static_cast<float>(std::rand() % s_Game.m_renderingInfo.m_H)
+                    position.m_value = xcore::vector2{ static_cast<float>(std::rand() % m_renderingInfo.m_width)
+                                                         , static_cast<float>(std::rand() % m_renderingInfo.m_height)
                     };
 
-                    //Cell = grid::ComputeGridCellFromWorldPosition(Position.m_Value);
+                    cells = grid::ComputeGridCellFromWorldPosition(position.m_value);
 
                     velocity.m_value.m_X = std::rand() / static_cast<float>(RAND_MAX) - 0.5f;
                     velocity.m_value.m_Y = std::rand() / static_cast<float>(RAND_MAX) - 0.5f;

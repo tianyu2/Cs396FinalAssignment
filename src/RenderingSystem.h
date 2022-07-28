@@ -15,19 +15,16 @@ struct RenderingSystem : xecs::system::instance
         >;
     __inline void OnPreUpdate(void) noexcept
     {
-        //
-        // Begin of the rendering
-        //
         glClear(GL_COLOR_BUFFER_BIT);
         glDisable(GL_DEPTH_TEST);
-        glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
-       // glColor3f(0.0f, 1.0f, 0.0f);
-        glViewport(0, 0, renderingInfo->m_W, renderingInfo->m_H);
+        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+
+        glViewport(0, 0, renderingInfo->m_width, renderingInfo->m_height);
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
-        glOrtho(0, renderingInfo->m_W, 0, renderingInfo->m_H, -1, 1);
+        glOrtho(0, renderingInfo->m_width, 0, renderingInfo->m_height, -1, 1);
         glScalef(1, -1, 1);
-        glTranslatef(0, -renderingInfo->m_H, 0);
+        glTranslatef(0, -renderingInfo->m_height, 0);
 
     }
     __inline

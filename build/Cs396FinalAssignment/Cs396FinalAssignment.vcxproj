@@ -173,10 +173,13 @@
     <ClInclude Include="..\..\dependencies\xecs\src\xecs_tools_bits.h" />
     <ClInclude Include="..\..\src\Components.h" />
     <ClInclude Include="..\..\src\Game.h" />
+    <ClInclude Include="..\..\src\GlutPrint.h" />
     <ClInclude Include="..\..\src\Grid.h" />
     <ClInclude Include="..\..\src\GridCells.h" />
+    <ClInclude Include="..\..\src\Helper.h" />
     <ClInclude Include="..\..\src\KeyInputs.h" />
     <ClInclude Include="..\..\src\Position.h" />
+    <ClInclude Include="..\..\src\RenderingGridSystem.h" />
     <ClInclude Include="..\..\src\RenderingInfo.h" />
     <ClInclude Include="..\..\src\RenderingShipSystem.h" />
     <ClInclude Include="..\..\src\RenderingSystem.h" />

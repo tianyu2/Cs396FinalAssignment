@@ -1,23 +1,29 @@
 #pragma once
 
-struct grid_cell
+struct GridCells
 {
-    xcore::err Serialize(xcore::textfile::stream& TextFile, bool, std::byte* pData) noexcept
-    {
-        xcore::err  Error;
-        auto& GridCell = *reinterpret_cast<grid_cell*>(pData);
-
-        (Error = TextFile.Field("X", GridCell.m_X))
-            || (Error = TextFile.Field("Y", GridCell.m_Y));
-        return Error;
-    }
-
     constexpr static auto typedef_v = xecs::component::type::share
     {
         .m_pName = "GridCell"
     ,   .m_bBuildFilter = true
     };
 
+    xcore::err Serialize(xecs::serializer::stream& TextFile, bool) noexcept
+    {
+        TextFile.Field("X", m_X).clear();
+        TextFile.Field("Y", m_Y).clear();
+        return {};
+    }
+
     std::int16_t m_X;
     std::int16_t m_Y;
 };
+
+property_begin(GridCells)
+{
+    property_var(m_X)
+        .Flags(property::flags::SHOW_READONLY)
+        , property_var(m_Y)
+        .Flags(property::flags::SHOW_READONLY)
+}
+property_end()

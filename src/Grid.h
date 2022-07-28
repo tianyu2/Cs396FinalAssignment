@@ -60,7 +60,7 @@ namespace grid
         int i = (Y & 1) * (2 * 3);
         for (std::int16_t y = std::max(0, Y - 1), end_y = std::min(cell_y_count - 1, Y + 1); y != end_y; ++y)
         {
-            if (auto pShareFilter = System.findShareFilter(grid_cell{ .m_X = X + Table[i + 0], .m_Y = y });
+            if (auto pShareFilter = System.findShareFilter(GridCells{ .m_X = X + Table[i + 0], .m_Y = y });
                 pShareFilter && System.Foreach
                 (*pShareFilter
                     , Query
@@ -69,7 +69,7 @@ namespace grid
                 )
                 return true;
 
-            if (auto pShareFilter = System.findShareFilter(grid_cell{ .m_X = X + Table[i + 1], .m_Y = y });
+            if (auto pShareFilter = System.findShareFilter(GridCells{ .m_X = X + Table[i + 1], .m_Y = y });
                 pShareFilter && System.Foreach
                 (*pShareFilter
                     , Query
@@ -86,7 +86,7 @@ namespace grid
     //---------------------------------------------------------------------------------------
 
     __inline constexpr
-        grid_cell ComputeGridCellFromWorldPosition(const xcore::vector2 Position) noexcept
+        GridCells ComputeGridCellFromWorldPosition(const xcore::vector2 Position) noexcept
     {
         const auto X = static_cast<int>(Position.m_X / (cell_width_v / 2.0f));
         const auto Y = std::max(0, std::min(static_cast<int>(Position.m_Y / cell_height_v), cell_y_count - 1));

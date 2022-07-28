@@ -3,9 +3,10 @@
 
 struct RenderingShipSystem : xecs::system::instance
 {
-    constexpr static auto typedef_v = xecs::system::type::child_update<RenderingSystem, RenderingSystem::update>
+    constexpr static auto typedef_v =
+        xecs::system::type::child_update<RenderingSystem, RenderingSystem::update>
     {
-        .m_pName = "render_ships"
+        .m_pName = "RenderingShipSystem"
     };
 
     using query = std::tuple
@@ -23,12 +24,12 @@ struct RenderingShipSystem : xecs::system::instance
         glEnd();
     }
 
-    __inline
-        void operator()(const Position& _position, const Timer* _pTimer) const noexcept
+    void operator()(const entity& _entity, const Position& _position, const Timer* _timer) const noexcept
     {
+        
         constexpr auto Size = 3;
-        if (_pTimer) glColor3f(0, 1.0, 0.0);
-        else       glColor3f(0.5, 1.0, 0.5);
+
+        glColor3f(1.0, 1.0, 0.0);
         glVertex2i(_position.m_value.m_X - Size, _position.m_value.m_Y - Size);
         glVertex2i(_position.m_value.m_X - Size, _position.m_value.m_Y + Size);
         glVertex2i(_position.m_value.m_X + Size, _position.m_value.m_Y + Size);
