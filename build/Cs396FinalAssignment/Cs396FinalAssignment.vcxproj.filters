@@ -314,5 +314,14 @@
     <ClInclude Include="..\..\src\Helper.h">
       <Filter>Tools</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\Player.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\UpdatePlayerMovement.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\RenderingPlayer.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

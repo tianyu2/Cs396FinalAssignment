@@ -178,9 +178,11 @@
     <ClInclude Include="..\..\src\GridCells.h" />
     <ClInclude Include="..\..\src\Helper.h" />
     <ClInclude Include="..\..\src\KeyInputs.h" />
+    <ClInclude Include="..\..\src\Player.h" />
     <ClInclude Include="..\..\src\Position.h" />
     <ClInclude Include="..\..\src\RenderingGridSystem.h" />
     <ClInclude Include="..\..\src\RenderingInfo.h" />
+    <ClInclude Include="..\..\src\RenderingPlayer.h" />
     <ClInclude Include="..\..\src\RenderingShipSystem.h" />
     <ClInclude Include="..\..\src\RenderingSystem.h" />
     <ClInclude Include="..\..\src\Scale.h" />
@@ -188,6 +190,7 @@
     <ClInclude Include="..\..\src\Settings\xcore_user_settings.h" />
     <ClInclude Include="..\..\src\Systems.h" />
     <ClInclude Include="..\..\src\Timer.h" />
+    <ClInclude Include="..\..\src\UpdatePlayerMovement.h" />
     <ClInclude Include="..\..\src\Velocity.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
