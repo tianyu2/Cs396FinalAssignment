@@ -7,18 +7,16 @@ struct Player
 
     xcore::err Serialize(xecs::serializer::stream& TextFile, bool) noexcept
     {
-        return TextFile.Field("Player stats", playerPos, playerPos.m_Y, bullets);
+        return TextFile.Field("Player stats", playerPos.m_X,playerPos.m_Y, health, bullets);
     }
 
     xcore::vector2 playerPos;
-
-    int bullets;
 
     int health;
 };
 
 property_begin(Player)
 {
-    property_var(playerPos, bullets, health)
+    property_var(playerPos, health)
 }
 property_end()

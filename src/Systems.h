@@ -4,3 +4,4 @@
 #include <RenderingGridSystem.h>
 #include <UpdatePlayerMovement.h>
 #include <RenderingPlayer.h>
+#include <UpdateEnemy.h>

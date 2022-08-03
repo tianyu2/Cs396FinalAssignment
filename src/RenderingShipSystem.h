@@ -24,12 +24,12 @@ struct RenderingShipSystem : xecs::system::instance
         glEnd();
     }
 
-    void operator()(const entity& _entity, const Position& _position, const Timer* _timer) const noexcept
+    void operator()(const entity& _entity, const Position& _position, const Timer* _timer,Enemy& enemy) const noexcept
     {
         
-        constexpr auto Size = 3;
+        constexpr auto Size = 10;
 
-        glColor3f(1.0, 1.0, 0.0);
+        glColor3f(1.0, 0.0, 0.0);
         glVertex2i(_position.m_value.m_X - Size, _position.m_value.m_Y - Size);
         glVertex2i(_position.m_value.m_X - Size, _position.m_value.m_Y + Size);
         glVertex2i(_position.m_value.m_X + Size, _position.m_value.m_Y + Size);

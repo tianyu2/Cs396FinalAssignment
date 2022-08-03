@@ -323,5 +323,11 @@
     <ClInclude Include="..\..\src\RenderingPlayer.h">
       <Filter>Systems</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\EnemyComp.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\UpdateEnemy.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

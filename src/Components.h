@@ -6,3 +6,4 @@
 #include "GridCells.h"
 #include "Timer.h"
 #include "Player.h"
+#include "EnemyComp.h"

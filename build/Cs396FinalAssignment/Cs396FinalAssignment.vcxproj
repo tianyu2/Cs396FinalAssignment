@@ -172,6 +172,7 @@
     <ClInclude Include="..\..\dependencies\xecs\src\xecs_tools.h" />
     <ClInclude Include="..\..\dependencies\xecs\src\xecs_tools_bits.h" />
     <ClInclude Include="..\..\src\Components.h" />
+    <ClInclude Include="..\..\src\EnemyComp.h" />
     <ClInclude Include="..\..\src\Game.h" />
     <ClInclude Include="..\..\src\GlutPrint.h" />
     <ClInclude Include="..\..\src\Grid.h" />
@@ -190,6 +191,7 @@
     <ClInclude Include="..\..\src\Settings\xcore_user_settings.h" />
     <ClInclude Include="..\..\src\Systems.h" />
     <ClInclude Include="..\..\src\Timer.h" />
+    <ClInclude Include="..\..\src\UpdateEnemy.h" />
     <ClInclude Include="..\..\src\UpdatePlayerMovement.h" />
     <ClInclude Include="..\..\src\Velocity.h" />
   </ItemGroup>
