@@ -7,7 +7,7 @@ struct Player
 
     xcore::err Serialize(xecs::serializer::stream& TextFile, bool) noexcept
     {
-        return TextFile.Field("Player stats", playerPos.m_X,playerPos.m_Y, health, bullets);
+        return TextFile.Field("Player stats", playerPos.m_X,playerPos.m_Y, health);
     }
 
     xcore::vector2 playerPos;

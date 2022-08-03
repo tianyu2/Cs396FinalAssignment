@@ -1,6 +1,3 @@
-#pragma once
-//#include "EnemyComp.h"
-
 static struct Game
 {
     using game_mgr_uptr = std::unique_ptr<xecs::game_mgr::instance>;
@@ -18,9 +15,9 @@ static struct Game
     void Initialize() noexcept
     {
         RenderingSystem::renderingInfo = &m_renderingInfo;
-        m_GameMgr->RegisterComponents<Position, Scale, Velocity,Timer, GridCells,Player,Enemy>();
+        m_GameMgr->RegisterComponents<Position, Scale, Velocity,Timer, GridCells,Player,Enemy, Bullet>();
         m_GameMgr->RegisterSystems<RenderingSystem,RenderingGridSystem, RenderingShipSystem,UpdatePlayerMovement,
-            RenderingPlayer,UpdateEnemy>();
+            RenderingPlayer,UpdateEnemy, RenderBullets>();
        
     }
 
@@ -56,12 +53,16 @@ static struct Game
                         }
                 }
 
+                if (i == 4)
+                {
+                    enemyArray[i][j].canShoot = true;
+                }
+
                 m_GameMgr->getOrCreateArchetype< Position, Velocity, Timer, Enemy>()
                     .CreateEntities(1, [&](Position& position, Velocity& velocity, Timer& timer, Enemy& enemyEnt)
                         {
+                            enemyEnt.canShoot = enemyArray[i][j].canShoot;
                             position.m_value = enemyArray[i][j].enemyPos;
-
-
                             velocity.m_value.m_X = 2;
                             velocity.m_value.Normalize();
 
