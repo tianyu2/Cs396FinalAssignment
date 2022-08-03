@@ -6,6 +6,7 @@ struct UpdateEnemy : xecs::system::instance
     };
 
    xecs::archetype::instance* m_pBulletArchetype{};
+
     _inline void operator()(Position& pos, Velocity& velocity, Enemy& ent)const noexcept
     {
         pos.m_value.m_X += velocity.m_value.m_X;
@@ -24,7 +25,7 @@ struct UpdateEnemy : xecs::system::instance
 
         if(ent.canShoot)
         {
-           m_pBulletArchetype< Position, Velocity, Timer, Bullet>()
+            getOrCreateArchetype< Position, Velocity, Timer, Bullet>()
                 .CreateEntities(1, [&](Position& position, Velocity& velocity, Timer& timer, Bullet& bullet)
                     {
                         position.m_value = pos.m_value;
@@ -33,15 +34,5 @@ struct UpdateEnemy : xecs::system::instance
                         timer.m_value = std::rand() / static_cast<float>(RAND_MAX) * 8;
                     });
         }
-       //if (pos.m_value.m_Y < 0)
-       //{
-       //    pos.m_value.m_Y = 0;
-       //    velocity.m_value.m_Y = -velocity.m_value.m_Y;
-       //}
-       //else if (pos.m_value.m_Y >= grid::max_resolution_height_v)
-       //{
-       //    pos.m_value.m_Y = grid::max_resolution_height_v - 1;
-       //    velocity.m_value.m_Y = -velocity.m_value.m_Y;
-       //}
     }
 };
