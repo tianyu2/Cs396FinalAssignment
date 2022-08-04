@@ -11,10 +11,12 @@ struct Bullet
     }
 
     xecs::component::entity m_ShipOwner;
+
+    xcore::vector2 bulletSpeed = { 0,5 };
 };
 
 property_begin(Bullet)
 {
-    property_var(m_ShipOwner)
+    property_var(m_ShipOwner, bulletSpeed)
 }
 property_end()

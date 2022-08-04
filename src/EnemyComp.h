@@ -16,6 +16,7 @@ struct Enemy
 
     bool canShoot = false;
 
+    bool bulletisShot = false;
 };
 
 property_begin(Enemy)

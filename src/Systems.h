@@ -6,3 +6,4 @@
 #include <RenderingPlayer.h>
 #include <UpdateEnemy.h>
 #include <RenderBullets.h>
+#include <UpdateBullet.h>

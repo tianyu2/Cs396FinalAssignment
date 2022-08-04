@@ -17,7 +17,7 @@ static struct Game
         RenderingSystem::renderingInfo = &m_renderingInfo;
         m_GameMgr->RegisterComponents<Position, Scale, Velocity,Timer, GridCells,Player,Enemy, Bullet>();
         m_GameMgr->RegisterSystems<RenderingSystem,RenderingGridSystem, RenderingShipSystem,UpdatePlayerMovement,
-            RenderingPlayer,UpdateEnemy, RenderBullets>();
+            RenderingPlayer,UpdateEnemy, RenderBullets, UpdateBullet>();
        
     }
 
@@ -53,7 +53,7 @@ static struct Game
                         }
                 }
 
-                if (i == 4)
+                if (i == 0)
                 {
                     enemyArray[i][j].canShoot = true;
                 }

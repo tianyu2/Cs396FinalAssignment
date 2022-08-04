@@ -335,5 +335,8 @@
     <ClInclude Include="..\..\src\Bullet.h">
       <Filter>Components</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\UpdateBullet.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

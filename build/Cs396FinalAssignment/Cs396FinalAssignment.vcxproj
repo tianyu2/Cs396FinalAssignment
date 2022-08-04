@@ -193,6 +193,7 @@
     <ClInclude Include="..\..\src\Settings\xcore_user_settings.h" />
     <ClInclude Include="..\..\src\Systems.h" />
     <ClInclude Include="..\..\src\Timer.h" />
+    <ClInclude Include="..\..\src\UpdateBullet.h" />
     <ClInclude Include="..\..\src\UpdateEnemy.h" />
     <ClInclude Include="..\..\src\UpdatePlayerMovement.h" />
     <ClInclude Include="..\..\src\Velocity.h" />
