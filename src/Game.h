@@ -15,9 +15,9 @@ static struct Game
     void Initialize() noexcept
     {
         RenderingSystem::renderingInfo = &m_renderingInfo;
-        m_GameMgr->RegisterComponents<Position, Scale, Velocity,Timer, GridCells,Player,Enemy, Bullet>();
+        m_GameMgr->RegisterComponents<Position, Scale, Velocity,Timer, GridCells,Player,Enemy, Bullet, PlayerBullet>();
         m_GameMgr->RegisterSystems<RenderingSystem,RenderingGridSystem, RenderingShipSystem,UpdatePlayerMovement,
-            RenderingPlayer,UpdateEnemy, RenderBullets, UpdateBullet>();
+            RenderingPlayer,UpdateEnemy, RenderBullets, UpdateBullet, UpdatePlayerBullet, RenderPlayerBullets>();
        
     }
 
@@ -56,12 +56,14 @@ static struct Game
                 if (i == 0)
                 {
                     enemyArray[i][j].canShoot = true;
+                    enemyArray[i][j].shooter = true;
                 }
 
                 m_GameMgr->getOrCreateArchetype< Position, Velocity, Timer, Enemy>()
                     .CreateEntities(1, [&](Position& position, Velocity& velocity, Timer& timer, Enemy& enemyEnt)
                         {
                             enemyEnt.canShoot = enemyArray[i][j].canShoot;
+                            enemyEnt.shooter = enemyArray[i][j].shooter;
                             position.m_value = enemyArray[i][j].enemyPos;
                             velocity.m_value.m_X = 2;
                             velocity.m_value.Normalize();

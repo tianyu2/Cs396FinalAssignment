@@ -181,6 +181,7 @@
     <ClInclude Include="..\..\src\Helper.h" />
     <ClInclude Include="..\..\src\KeyInputs.h" />
     <ClInclude Include="..\..\src\Player.h" />
+    <ClInclude Include="..\..\src\PlayerBullet.h" />
     <ClInclude Include="..\..\src\Position.h" />
     <ClInclude Include="..\..\src\RenderBullets.h" />
     <ClInclude Include="..\..\src\RenderingGridSystem.h" />
@@ -188,6 +189,7 @@
     <ClInclude Include="..\..\src\RenderingPlayer.h" />
     <ClInclude Include="..\..\src\RenderingShipSystem.h" />
     <ClInclude Include="..\..\src\RenderingSystem.h" />
+    <ClInclude Include="..\..\src\RenderPlayerBullets.h" />
     <ClInclude Include="..\..\src\Scale.h" />
     <ClInclude Include="..\..\src\Settings\PropertyConfig.h" />
     <ClInclude Include="..\..\src\Settings\xcore_user_settings.h" />
@@ -195,6 +197,7 @@
     <ClInclude Include="..\..\src\Timer.h" />
     <ClInclude Include="..\..\src\UpdateBullet.h" />
     <ClInclude Include="..\..\src\UpdateEnemy.h" />
+    <ClInclude Include="..\..\src\UpdatePlayerBullet.h" />
     <ClInclude Include="..\..\src\UpdatePlayerMovement.h" />
     <ClInclude Include="..\..\src\Velocity.h" />
   </ItemGroup>

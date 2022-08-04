@@ -9,7 +9,7 @@ struct RenderBullets : xecs::system::instance
 
     void OnPreUpdate(void) noexcept
     {
-        glBegin(GL_TRIANGLES);
+        glBegin(GL_QUADS);
     }
 
     void OnPostUpdate(void) noexcept
@@ -20,11 +20,12 @@ struct RenderBullets : xecs::system::instance
     __inline
         void operator()(const Position& position, const Velocity& velocity) const noexcept
     {
-        constexpr auto SizeX = 3;
-        constexpr auto SizeY = SizeX * 9;
-        glColor3f(1.0, 0.5, 0.0);
-        glVertex2i(position.m_value.m_X + velocity.m_value.m_X * SizeY, position.m_value.m_Y + velocity.m_value.m_Y * SizeY);
-        glVertex2i(position.m_value.m_X + velocity.m_value.m_Y * SizeX, position.m_value.m_Y - velocity.m_value.m_X * SizeX);
-        glVertex2i(position.m_value.m_X - velocity.m_value.m_Y * SizeX, position.m_value.m_Y + velocity.m_value.m_X * SizeX);
+        constexpr auto Size = 5;
+
+        glColor3f(1.0, 1.0, 0.0);
+        glVertex2i(position.m_value.m_X - Size, position.m_value.m_Y - Size);
+        glVertex2i(position.m_value.m_X - Size, position.m_value.m_Y + Size);
+        glVertex2i(position.m_value.m_X + Size, position.m_value.m_Y + Size);
+        glVertex2i(position.m_value.m_X + Size, position.m_value.m_Y - Size);
     }
 };

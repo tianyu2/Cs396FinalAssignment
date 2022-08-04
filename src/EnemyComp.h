@@ -14,6 +14,8 @@ struct Enemy
 
     xcore::vector2 enemyPos = {0,10};
 
+    bool shooter = false;
+
     bool canShoot = false;
 
     bool bulletisShot = false;

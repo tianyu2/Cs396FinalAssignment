@@ -7,12 +7,6 @@ struct UpdatePlayerMovement : xecs::system::instance
 
     _inline void operator()(Position& pos, Player& plyer)const noexcept
     {
-       // plyer.scr += (std::rand() / 1000);
-       //
-       // if (plyer.scr % 10)
-       // {
-       //     std::cout << "Current Player Score: " << plyer.scr << std::endl;
-       // }
 
         if (GetKeyState('A') & 0x8000)
         {
@@ -24,16 +18,18 @@ struct UpdatePlayerMovement : xecs::system::instance
             plyer.playerPos += xcore::vector2{ 2.f, 0.f };
             pos.m_value = plyer.playerPos;
         }
-        //if (GetKeyState('W') & 0x8000)
-        //{
-        //    plyer.playerPos += xcore::vector2{ 0.f, -2.f };;
-        //    trans.m_pos = plyer.playerPos;
-        //}
-        //if (GetKeyState('S') & 0x8000)
-        //{
-        //    plyer.playerPos += xcore::vector2{ 0.f, 2.f };;
-        //    trans.m_pos = plyer.playerPos;
-        //}
+        if (GetKeyState('F') & 0x8000)
+        {
+            getOrCreateArchetype< Position, Velocity, Timer, PlayerBullet>()
+                .CreateEntities(1, [&](Position& position, Velocity& bulvel, Timer& timer, PlayerBullet& bullet)
+                    {
+                        position.m_value = pos.m_value;
+                        bulvel.m_value = bullet.bulletSpeed;
+                        bulvel.m_value.Normalize();
+                        position.m_value = position.m_value + bulvel.m_value;
+                        timer.m_value = std::rand() / static_cast<float>(RAND_MAX) * 8;
+                    });
+        }
 
     }
 };
