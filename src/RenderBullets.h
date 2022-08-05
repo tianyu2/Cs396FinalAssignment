@@ -5,7 +5,7 @@ struct RenderBullets : xecs::system::instance
         .m_pName = "render_bullets"
     };
 
-    using query = std::tuple<xecs::query::must<Bullet>>;
+    using query = std::tuple<xecs::query::must<EnemyRusherSpaceShips>>;
 
     void OnPreUpdate(void) noexcept
     {

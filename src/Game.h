@@ -11,13 +11,12 @@ static struct Game
     Keys            m_Keys{};
     int             m_DisplayGridInfo{ 0 };
     Enemy           enemyArray[5][5];
-
     void Initialize() noexcept
     {
         RenderingSystem::renderingInfo = &m_renderingInfo;
-        m_GameMgr->RegisterComponents<Position, Scale, Velocity,Timer, GridCells,Player,Enemy, Bullet, PlayerBullet>();
+        m_GameMgr->RegisterComponents<Position, Scale, Velocity,Timer, GridCells,Player,Enemy, EnemyRusherSpaceShips, PlayerBullet>();
         m_GameMgr->RegisterSystems<RenderingSystem,RenderingGridSystem, RenderingShipSystem,UpdatePlayerMovement,
-            RenderingPlayer,UpdateEnemy, RenderBullets, UpdateBullet, UpdatePlayerBullet, RenderPlayerBullets>();
+            RenderingPlayer,UpdateEnemy, RenderBullets, EnemyRusherSpaceShipsSystem, UpdatePlayerBullet, RenderPlayerBullets>();
        
     }
 
@@ -73,22 +72,20 @@ static struct Game
             }
         }
 
-       //m_GameMgr->getOrCreateArchetype< Position, Velocity, Timer,Enemy>()
-       //    .CreateEntities(25, [&](Position& position, Velocity& velocity, Timer& timer,Enemy& enemyEnt) noexcept
-       //        {
-       //
-       //           //position.m_value = xcore::vector2{ static_cast<float>(std::rand() % m_renderingInfo.m_width)
-       //           //                                     , static_cast<float>(std::rand() % m_renderingInfo.m_height/2)
-       //           //};
-       //            position.m_value = xcore::vector2{50+ enemyEnt.offsetPos.m_X, 100+ enemyEnt.offsetPos.m_Y };
-       //           // cells = grid::ComputeGridCellFromWorldPosition(position.m_value);
-       //
-       //            velocity.m_value.m_X = std::rand() / static_cast<float>(RAND_MAX) - 0.5f;
-       //            velocity.m_value.m_Y = std::rand() / static_cast<float>(RAND_MAX) - 0.5f;
-       //            velocity.m_value.Normalize();
-       //
-       //            timer.m_value = std::rand() / static_cast<float>(RAND_MAX) * 8;
-       //        });
+       m_GameMgr->getOrCreateArchetype< Position, Velocity, Timer, EnemyRusherSpaceShips>()
+           .CreateEntities(10, [&](Position& position, Velocity& velocity, Timer& timer, EnemyRusherSpaceShips& enemyEnt) noexcept
+               {
+       
+                  position.m_value = xcore::vector2{ static_cast<float>(std::rand() % m_renderingInfo.m_width)
+                                                       , static_cast<float>(std::rand() % m_renderingInfo.m_height/(2))
+                  };
+
+                   velocity.m_value.m_X = std::rand() / static_cast<float>(RAND_MAX) - 0.5f;
+                   velocity.m_value.m_Y = std::rand() / static_cast<float>(RAND_MAX) + 0.5f;
+                   velocity.m_value.Normalize();
+       
+                   timer.m_value = std::rand() / static_cast<float>(RAND_MAX) * 8;
+               });
 
 
         m_GameMgr->getOrCreateArchetype< Position, Velocity, Timer,Player>()

@@ -15,11 +15,18 @@ struct UpdatePlayerBullet : xecs::system::instance
         xecs::query::instance enemyquery;
         enemyquery.m_Must.AddFromComponents<Enemy>();
         position.m_value -= Bullet.bulletSpeed;
+
         Foreach(Search(enemyquery), [&](entity& enemy, Position& pos, Enemy& enemyent)noexcept
             {
                 if (constexpr auto distance_v = 10; (pos.m_value - position.m_value).getLengthSquared() < distance_v * distance_v)
                 {  
-                    DeleteEntity(enemy);
+                    enemyent.enemyHp -= 1.0f;
+
+                    if (enemyent.enemyHp <= 0.0f)
+                    {
+                        DeleteEntity(enemy);
+                    }
+
                     DeleteEntity(Entity);
                 }
             });

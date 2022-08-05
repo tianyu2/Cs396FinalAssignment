@@ -10,6 +10,8 @@ struct Enemy
         return TextFile.Field("Enemy stats", enemyPos.m_X, enemyPos.m_Y, canShoot);
     }
 
+    float enemyHp = 50.0f;
+
     xcore::vector2 offsetPos = {50 , 0};
 
     xcore::vector2 enemyPos = {0,10};
@@ -23,6 +25,6 @@ struct Enemy
 
 property_begin(Enemy)
 {
-    property_var(enemyPos, offsetPos)
+    property_var(enemyPos, offsetPos, enemyHp)
 }
 property_end()

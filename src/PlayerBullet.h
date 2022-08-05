@@ -6,6 +6,7 @@ struct PlayerBullet
     };
 
     xcore::vector2 bulletSpeed = { 0,5 };
+
 };
 
 property_begin(PlayerBullet)

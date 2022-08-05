@@ -332,10 +332,10 @@
     <ClInclude Include="..\..\src\RenderBullets.h">
       <Filter>Systems</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\Bullet.h">
+    <ClInclude Include="..\..\src\EnemyRusherSpaceShips.h">
       <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\UpdateBullet.h">
+    <ClInclude Include="..\..\src\EnemyRusherSpaceShipsSystem.h">
       <Filter>Systems</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\RenderPlayerBullets.h">
@@ -347,5 +347,6 @@
     <ClInclude Include="..\..\src\UpdatePlayerBullet.h">
       <Filter>Systems</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\SaiKang.h" />
   </ItemGroup>
 </Project>

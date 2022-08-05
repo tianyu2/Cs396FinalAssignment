@@ -171,7 +171,7 @@
     <ClInclude Include="..\..\dependencies\xecs\src\xecs_system_mgr.h" />
     <ClInclude Include="..\..\dependencies\xecs\src\xecs_tools.h" />
     <ClInclude Include="..\..\dependencies\xecs\src\xecs_tools_bits.h" />
-    <ClInclude Include="..\..\src\Bullet.h" />
+    <ClInclude Include="..\..\src\EnemyRusherSpaceShips.h" />
     <ClInclude Include="..\..\src\Components.h" />
     <ClInclude Include="..\..\src\EnemyComp.h" />
     <ClInclude Include="..\..\src\Game.h" />
@@ -190,12 +190,13 @@
     <ClInclude Include="..\..\src\RenderingShipSystem.h" />
     <ClInclude Include="..\..\src\RenderingSystem.h" />
     <ClInclude Include="..\..\src\RenderPlayerBullets.h" />
+    <ClInclude Include="..\..\src\SaiKang.h" />
     <ClInclude Include="..\..\src\Scale.h" />
     <ClInclude Include="..\..\src\Settings\PropertyConfig.h" />
     <ClInclude Include="..\..\src\Settings\xcore_user_settings.h" />
     <ClInclude Include="..\..\src\Systems.h" />
     <ClInclude Include="..\..\src\Timer.h" />
-    <ClInclude Include="..\..\src\UpdateBullet.h" />
+    <ClInclude Include="..\..\src\EnemyRusherSpaceShipsSystem.h" />
     <ClInclude Include="..\..\src\UpdateEnemy.h" />
     <ClInclude Include="..\..\src\UpdatePlayerBullet.h" />
     <ClInclude Include="..\..\src\UpdatePlayerMovement.h" />

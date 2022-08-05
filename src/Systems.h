@@ -6,6 +6,6 @@
 #include <RenderingPlayer.h>
 #include <UpdateEnemy.h>
 #include <RenderBullets.h>
-#include <UpdateBullet.h>
+#include <EnemyRusherSpaceShipsSystem.h>
 #include <RenderPlayerBullets.h>
 #include <UpdatePlayerBullet.h>
