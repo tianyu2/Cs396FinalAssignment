@@ -12,6 +12,7 @@ struct UpdatePlayerBullet : xecs::system::instance
 
     _inline void operator()(entity& Entity,  Position& position, const PlayerBullet& Bullet) const noexcept
     {
+
         xecs::query::instance enemyquery;
         enemyquery.m_Must.AddFromComponents<Enemy>();
         position.m_value -= Bullet.bulletSpeed;

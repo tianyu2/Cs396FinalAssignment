@@ -9,6 +9,8 @@ struct UpdateEnemy : xecs::system::instance
 
     _inline void operator()(Position& pos, Velocity& velocity, Enemy& ent, entity& ship, Timer& _timer)const noexcept
     {
+        glColor3f(1.0f, 1.0f, 1.0f);
+        GlutPrint(-500, 500, "%f", 100.f);
         if (spaceshipHP < 5)
         {
             pos.m_value.m_X += velocity.m_value.m_X*2;

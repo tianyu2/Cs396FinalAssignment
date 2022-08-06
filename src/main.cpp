@@ -82,7 +82,6 @@ int main(int argc, char** argv)
             else if (Button == GLUT_RIGHT_BUTTON) s_Game.m_MouseRight = (State == GLUT_DOWN);
         }
     );
-
     glutMainLoop();
 
     s_Game.m_GameMgr.reset();

@@ -16,6 +16,7 @@
     <ProjectGuid>{b61d24fe-43d8-48b0-a4b3-0e79efe5ed36}</ProjectGuid>
     <RootNamespace>Cs396FinalAssignment</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>TianYu_Cs396FinalAssignment</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
