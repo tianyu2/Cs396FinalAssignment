@@ -72,20 +72,6 @@ static struct Game
             }
         }
 
-       m_GameMgr->getOrCreateArchetype< Position, Velocity, Timer, EnemyRusherSpaceShips>()
-           .CreateEntities(10, [&](Position& position, Velocity& velocity, Timer& timer, EnemyRusherSpaceShips& enemyEnt) noexcept
-               {
-       
-                  position.m_value = xcore::vector2{ static_cast<float>(std::rand() % m_renderingInfo.m_width)
-                                                       , static_cast<float>(std::rand() % m_renderingInfo.m_height/(2))
-                  };
-
-                   velocity.m_value.m_X = std::rand() / static_cast<float>(RAND_MAX) - 0.5f;
-                   velocity.m_value.m_Y = std::rand() / static_cast<float>(RAND_MAX) + 0.5f;
-                   velocity.m_value.Normalize();
-       
-                   timer.m_value = std::rand() / static_cast<float>(RAND_MAX) * 8;
-               });
 
 
         m_GameMgr->getOrCreateArchetype< Position, Velocity, Timer,Player>()

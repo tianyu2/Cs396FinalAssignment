@@ -9,7 +9,14 @@ struct UpdateEnemy : xecs::system::instance
 
     _inline void operator()(Position& pos, Velocity& velocity, Enemy& ent, entity& ship, Timer& _timer)const noexcept
     {
-        pos.m_value.m_X += velocity.m_value.m_X;
+        if (spaceshipHP < 5)
+        {
+            pos.m_value.m_X += velocity.m_value.m_X*2;
+        }
+        else
+        {
+            pos.m_value.m_X += velocity.m_value.m_X;
+        }
 
         // Bounce on edges
         if (pos.m_value.m_X < 0)

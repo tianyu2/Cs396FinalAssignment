@@ -24,6 +24,15 @@ struct UpdatePlayerMovement : xecs::system::instance
             plyer.playerPos += xcore::vector2{ 2.f, 0.f };
             pos.m_value = plyer.playerPos;
         }
+
+        if (pos.m_value.m_X < 0)
+        {
+            pos.m_value.m_X = 0;
+        }
+        else if (pos.m_value.m_X >= grid::max_resolution_width_v)
+        {
+            pos.m_value.m_X = grid::max_resolution_width_v - 1;
+        }
         static float temp = 0.0f;
 
         temp += _timer.m_value;
