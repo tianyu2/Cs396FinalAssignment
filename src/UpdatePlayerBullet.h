@@ -45,9 +45,9 @@ struct UpdatePlayerBullet : xecs::system::instance
                     }
 
                     --spaceshipHP;
-
+                    enemy.setZombie();
                     DeleteEntity(enemy);
-
+                    Entity.setZombie();
                     DeleteEntity(Entity);
                 }
             });
